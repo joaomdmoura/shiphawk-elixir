@@ -1,18 +1,6 @@
 defmodule Shiphawk do
   @moduledoc """
-  Documentation for Shiphawk.
+  Main Shiphawk module.
+  It provides a nice and clean DSL that abstracts ShipHawk's RESTful API.
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Shiphawk.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end

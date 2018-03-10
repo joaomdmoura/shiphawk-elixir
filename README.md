@@ -17,6 +17,18 @@ def deps do
 end
 ```
 
+Make sure you also add the necessary configuration:
+
+```
+config :shiphawk, api_key: "your_api_key"
+```
+
+## Supported Endpoints
+
+These are the supported API groups currenlty supported:
+
+- Rates
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/shiphawk](https://hexdocs.pm/shiphawk).
