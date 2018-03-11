@@ -9,7 +9,8 @@ defmodule Shiphawk.Request do
   plug Tesla.Middleware.BaseUrl, "https://shiphawk.com/api/v4"
   plug Tesla.Middleware.JSON
 
-  @api_key Application.get_env(:shiphawk, :api_key)
+  # @api_key Application.get_env(:shiphawk, :api_key)
+  @api_key "d68e33b44c0d59217e80bd8bc8d28d27"
 
   @doc """
   post/2 is the function responsible for doing post requests.
@@ -21,29 +22,15 @@ defmodule Shiphawk.Request do
 
   ## Example
     ```
-    data = %{
-      "items" =>[%{
-        "item_type" => "parcel",
-        "length" => "10",
-        "width"  => "10",
-        "height" => "11",
-        "weight" => "10",
-        "value" => 100.00
-      }],
-      "origin_address" => %{ "zip" => "93101"},
-      "destination_address" => %{ "zip" => "60060"}
-    }
-
     Shiphawk.Request.post('/rates', data)
     ```
   """
-  def post(path, data) do
+  def post_request(path, data) do
     response = path
       |> format_url
       |> post(data)
 
-    IO.inspect response
-    {:ok, response}
+    {:ok, response.body}
   end
 
   defp format_url(path) do

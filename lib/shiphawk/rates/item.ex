@@ -3,9 +3,11 @@ defmodule Shiphawk.Rates.Item do
   Module that holds the Item Struct.
   """
 
-  defstruct :type, :product_sku, :unpacked_item_type_id, :handling_unit_type,
-            :quantity, :length, :width, :height, :weight, :volume_cubic_ft.
-            :value, :freight_class, :package_type, :package_quantity,
-            :require_crating, :description, :nmfc, :can_ship_parcel,
-            :optimize_packing, :harmonized_code, :country_of_origin
+  defstruct type: nil, product_sku: nil, unpacked_item_type_id: nil,
+            item_type: nil, handling_unit_type: nil, quantity: nil, length: nil,
+            width: nil, height: nil, weight: nil, volume_cubic_ft: nil, value: nil,
+            freight_class: nil, package_type: nil, package_quantity: nil,
+            require_crating: nil, description: nil, nmfc: nil,
+            can_ship_parcel: nil, optimize_packing: nil, harmonized_code: nil,
+            country_of_origin: nil
 end

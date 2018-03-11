@@ -27,7 +27,41 @@ config :shiphawk, api_key: "your_api_key"
 
 These are the supported API groups currenlty supported:
 
-- Rates
+- [Rates](#rates)
+
+## Rates
+
+### Getting Rates
+  `Shiphawk.Rates.get/3` is used to get shipping rates
+
+#### Parameters
+  - `items`: List of Maps, items that are being shipped ([Accepted parameters](https://docs.shiphawk.com/reference#rate-item-object)).
+  - `from`: Map with the address where it's being shipped from ([Accepted parameters](https://docs.shiphawk.com/reference#addresses)).
+  - `to`: Map with the address where it's being shipped to ([Accepted parameters](https://docs.shiphawk.com/reference#addresses)).
+
+#### Example
+```elixir
+items = [%{
+  package_type: "box",
+  item_type: "handling_unit",
+  handling_unit_type: "pallet", # Must be "pallet", "carton", "box", "crate", or "bag"
+  length: "10",
+  width: "10",
+  height: "11",
+  weight: "10",
+  value: 100.00
+}]
+
+from = %{ "zip" => "93101"}
+to = %{ "zip" => "60060"}
+
+Shiphawk.Rates.get(items, from, to)
+
+# {
+#   :ok,
+#   %{"rates" => [...]}
+#  }
+```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
