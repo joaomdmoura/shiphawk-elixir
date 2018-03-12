@@ -5,6 +5,7 @@ defmodule Shiphawk.Request do
   """
 
   @api_key Application.get_env(:shiphawk, :api_key)
+  @adapter Application.get_env(:shiphawk, :adapter)
 
   @doc """
   post/2 is the function responsible for doing post requests.
@@ -22,32 +23,12 @@ defmodule Shiphawk.Request do
   def post_request(path, data) do
     response = path
       |> format_url
-      |> adapter().post(data)
+      |> @adapter.post(data)
 
     response.body
   end
 
-  defp adapter() do
-    Application.get_env(:shiphawk, :adapter)
-  end
-
   defp format_url(path) do
     path <> "?api_key="  <> @api_key
-  end
-end
-
-defmodule Shiphawk.Request.Adapters.HTTP do
-  use Tesla
-  plug Tesla.Middleware.BaseUrl, "https://shiphawk.com/api/v4"
-  plug Tesla.Middleware.JSON
-end
-
-defmodule Shiphawk.Request.Adapters.Test do
-  def post(_path, _data) do
-    %{
-      body: %{
-        rates: []
-      }
-    }
   end
 end

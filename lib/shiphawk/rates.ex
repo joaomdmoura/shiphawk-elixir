@@ -4,7 +4,6 @@ defmodule Shiphawk.Rates do
   """
 
   alias Shiphawk.Request
-  alias Shiphawk.Address
   alias Shiphawk.Rates.Item
   @path "/rates"
 
