@@ -7,7 +7,11 @@ defmodule Shiphawk.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      package: package(),
+      description: description(),
+      source_url: "https://github.com/joaomdmoura/shiphawk-elixir",
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -22,7 +26,22 @@ defmodule Shiphawk.Mixfile do
   defp deps do
     [
       {:tesla, "~> 0.10.0"},
-      {:poison, ">= 1.0.0"}
+      {:poison, ">= 1.0.0"},
+      {:excoveralls, "~> 0.7", only: :test}
+    ]
+  end
+
+  defp description() do
+    "Abstraction of Shiphawk API to Elixir applications.
+    It comes with a nice and clean DSL that easily enable projects
+    to integrate with ShipHawk."
+  end
+
+  defp package() do
+    [
+      maintainers: ["João M. D. Moura"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/joaomdmoura/shiphawk-elixir"}
     ]
   end
 end

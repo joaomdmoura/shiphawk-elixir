@@ -48,6 +48,7 @@ defmodule Shiphawk.Rates do
       destination_address: to,
     }
 
-    Request.post_request(@path, data)
+    response = Request.post_request(@path, data)
+    {:ok, response}
   end
 end

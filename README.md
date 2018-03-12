@@ -1,8 +1,8 @@
 # ShipHawk
 
 This is an abstraction of Shiphawk API to Elixir applications.
-It comes with a nice and clean DSL that easily enable you to integrate
-with ShipHawk.
+It comes with a nice and clean DSL that easily enable projects
+to integrate with ShipHawk.
 
 ## Installation
 
