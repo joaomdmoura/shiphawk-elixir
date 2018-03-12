@@ -7,11 +7,11 @@
 This is an abstraction of Shiphawk API to Elixir applications.
 It comes with a nice and clean DSL that easily enable projects
 to integrate with ShipHawk.
+You can check the docs on [https://hexdocs.pm/shiphawk](https://hexdocs.pm/shiphawk).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `shiphawk` to your list of dependencies in `mix.exs`:
+Add `shiphawk` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -23,7 +23,7 @@ end
 
 Make sure you also add the necessary configuration:
 
-```
+```elixir
 config :shiphawk, api_key: "your_api_key"
 ```
 
@@ -66,8 +66,3 @@ Shiphawk.Rates.get(items, from, to)
 #   %{"rates" => [...]}
 #  }
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/shiphawk](https://hexdocs.pm/shiphawk).
-
