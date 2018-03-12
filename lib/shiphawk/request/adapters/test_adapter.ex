@@ -1,4 +1,6 @@
 defmodule Shiphawk.Request.Adapters.Test do
+  @moduledoc false
+
   def post(_path, _data) do
     %{
       body: %{

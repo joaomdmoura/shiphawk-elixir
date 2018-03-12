@@ -37,7 +37,7 @@ defmodule Shiphawk.Rates do
     ```
   """
   def get(items, from, to) do
-    items = Enum.map(items, fn(item)->
+    items = Enum.map(items, fn(item) ->
       struct(Item, item)
     end)
 
