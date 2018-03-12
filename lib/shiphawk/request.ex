@@ -28,7 +28,5 @@ defmodule Shiphawk.Request do
     response.body
   end
 
-  defp format_url(path) do
-    path <> "?api_key="  <> @api_key
-  end
+  defp format_url(path), do: "#{path}?api_key=#{@api_key}"
 end
