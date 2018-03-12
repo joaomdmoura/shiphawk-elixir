@@ -27,6 +27,7 @@ defmodule Shiphawk.Mixfile do
     [
       {:tesla, "~> 0.10.0"},
       {:poison, ">= 1.0.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev},
       {:excoveralls, "~> 0.7", only: :test}
     ]
   end
