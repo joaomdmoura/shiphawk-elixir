@@ -1,5 +1,8 @@
 # ShipHawk
 
+[![Ebert](https://ebertapp.io/github/joaomdmoura/shiphawk-elixir.svg)](https://ebertapp.io/github/joaomdmoura/shiphawk-elixir)
+[![Build Status](https://travis-ci.org/joaomdmoura/shiphawk-elixir.svg?branch=master)](https://travis-ci.org/joaomdmoura/shiphawk-elixir)
+
 This is an abstraction of Shiphawk API to Elixir applications.
 It comes with a nice and clean DSL that easily enable projects
 to integrate with ShipHawk.
